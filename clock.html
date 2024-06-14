@@ -3,15 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>A simple clock</title>
+  <!--Google Font API--> 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet"> <!--Change your Google Font API--> 
 </head>
 
+
 <body translate="no" >
+  <!--CSS Styling below. Change font-family name to match Google Font api--> 
   <div id="output" 
-       style=	"display: inline-block;
-		font-family: Nosifer;
+       style=	"display: inline-block; 
+		font-family: Nosifer; 
 		font-size: 100px;
 		text-align: right;
 		color: rgb(153, 0, 0);
@@ -25,7 +28,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
   
   <script>
-    document.getElementById('output').innerHTML = 5 + ":" + 01;
+    document.getElementById('output').innerHTML = 5 + ":" + 01; // set your minutes and seconds here
     startTimer();
 
 
