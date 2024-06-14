@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>A simple clock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+</head>
+
+<body translate="no" >
+  <div id="output" 
+       style=	"display: inline-block;
+		font-family: Nosifer;
+		font-size: 100px;
+		text-align: right;
+		color: rgb(153, 0, 0);
+    -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: black;
+		border-radius: 500px, rgb(255, 255, 255); 
+		padding: 10px;
+    text-shadow: 5px 5px #0000008e;">
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  
+  <script>
+    document.getElementById('output').innerHTML = 5 + ":" + 01;
+    startTimer();
+
+
+function startTimer() {
+  var presentTime = document.getElementById('output').innerHTML;
+  var timeArray = presentTime.split(/[:]+/);
+  var m = timeArray[0];
+  var s = checkSecond((timeArray[1] - 1));
+  if(s==59){m=m-1}
+  if(m<0){
+    return
+  }
+  
+  document.getElementById('output').innerHTML =
+    m + ":" + s;
+  console.log(m)
+  setTimeout(startTimer, 1000);
+  
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
+  if (sec < 0) {sec = "59"};
+  return sec;
+}
+  </script>
+</body>
+</html>
